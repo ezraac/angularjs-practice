@@ -17,8 +17,13 @@
   so <p> will be whatever ng-model value is
   -->
     <div ng-app="">
+      <p>What is your name?</p>
       <p>Name: <input type="text" ng-model="name" value=""></p>
-      <p ng-bind="name"></p>
+      <p>Your name is: <span ng-bind="name"></span></p>
+      
+      <div ng-init="firstName='Ezra'">
+        <p>Hey there! My name is <span ng-bind="firstName"></span></p>
+      </div>
     </div> 
   
   </body>
