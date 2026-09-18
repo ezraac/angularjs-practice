@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -8,6 +8,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
   </head>
   <body>
+
+  <!-- 
+  ng-app attribute tells angularjs that the div is the owner of the application
+  ng-model binds the value of the input box to the application name
+  ng-bind binds the contents of the <p> element to the application variable name
+
+  so <p> will be whatever ng-model value is
+  -->
+    <div ng-app="">
+      <p>Name: <input type="text" ng-model="name" value=""></p>
+      <p ng-bind="name"></p>
+    </div> 
   
   </body>
 </html>
