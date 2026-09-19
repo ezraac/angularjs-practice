@@ -11,7 +11,7 @@
 
   <!-- 
   ng-app attribute tells angularjs that the div is the owner of the application
-  ng-model binds the value of the input box to the application name
+  ng-model binds the value of the input box to the name variable
   ng-bind binds the contents of the <p> element to the application variable name
 
   so <p> will be whatever ng-model value is
@@ -21,9 +21,35 @@
       <p>Name: <input type="text" ng-model="name" value=""></p>
       <p>Your name is: <span ng-bind="name"></span></p>
       
+      <!--
+        ng-init initialises an angularjs variable.
+        Using ng-bind and the variable name will bind the value to the variable value.
+      -->
       <div ng-init="firstName='Ezra'">
         <p>Hey there! My name is <span ng-bind="firstName"></span></p>
       </div>
+
+      <p>The following expression evaluates 5 + 5</p>
+      <p>AngularJS Expression: {{5 + 5}}</p>
+
+      <div ng-init="myCol='lightblue'">
+        <p style="background-color:{{myCol}}" ng-model="myCol"> We can use expressions anywhere in HTML. Like changing background colour!</p>
+      </div>
+
+      <div ng-init="quantity=5;cost=2;">
+        <p>We can initialise multiple variables at once with ng-init (not very common)</p>
+        <p>Total cost: {{quantity * cost}}</p>
+      </div>
+
+      <div ng-init="person={firstName:'Ezra',lastName:'Chai'}">
+        <p>My full name is {{person.firstName + " " + person.lastName}}</p>
+      </div>
+
+      <div ng-init="animals=['dog', 'cat', 'mouse']">
+        <p>My animal chosen is index 2: {{animals[2]}}</p>
+        
+      </div>
+
     </div> 
   
   </body>
